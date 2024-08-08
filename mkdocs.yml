@@ -1,0 +1,11 @@
+site_name: IBM - Projeto Reskilling - Documentação EcommerceApi AWS
+theme:
+  name: material  # Tema Material Design
+repo_url: https://github.com/edson-github/doc-reskilling.git
+nav:
+  - Arquitetura: arquitetura.md
+  - Documentação: index.md
+  - Guia de Instalação: guia_instalacao.md
+  - Tutorial Básico: tutorial_basico.md
+  - Referência da API: referencia_api.md
+  - FAQ: faq.md

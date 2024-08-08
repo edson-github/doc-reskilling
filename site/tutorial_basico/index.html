@@ -1,0 +1,625 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../guia_instalacao/">
+      
+      
+        <link rel="next" href="../referencia_api/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Tutorial Básico - IBM - Projeto Reskilling - Documentação EcommerceApi AWS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-completo-configurando-codigo-typescript-com-aws-cdk-e-lambda-layers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IBM - Projeto Reskilling - Documentação EcommerceApi AWS" class="md-header__button md-logo" aria-label="IBM - Projeto Reskilling - Documentação EcommerceApi AWS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM - Projeto Reskilling - Documentação EcommerceApi AWS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial Básico
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IBM - Projeto Reskilling - Documentação EcommerceApi AWS" class="md-nav__button md-logo" aria-label="IBM - Projeto Reskilling - Documentação EcommerceApi AWS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM - Projeto Reskilling - Documentação EcommerceApi AWS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitetura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arquitetura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia_instalacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de Instalação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tutorial Básico
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial Básico
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-completo-configurando-codigo-typescript-com-aws-cdk-e-lambda-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial Completo: Configurando Código TypeScript com AWS CDK e Lambda Layers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial Completo: Configurando Código TypeScript com AWS CDK e Lambda Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura do Projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração do Projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicas-e-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas e Boas Práticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencia_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referência da API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial-completo-configurando-codigo-typescript-com-aws-cdk-e-lambda-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorial Completo: Configurando Código TypeScript com AWS CDK e Lambda Layers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial Completo: Configurando Código TypeScript com AWS CDK e Lambda Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura do Projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracao-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração do Projeto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicas-e-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas e Boas Práticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Tutorial Básico</h1>
+
+<h2 id="tutorial-completo-configurando-codigo-typescript-com-aws-cdk-e-lambda-layers">Tutorial Completo: Configurando Código TypeScript com AWS CDK e Lambda Layers</h2>
+<p>Este tutorial aborda a configuração de um projeto AWS CDK (Cloud Development Kit) em TypeScript, integrando Lambda Layers para organizar e reutilizar o código das suas funções Lambda.</p>
+<h3 id="estrutura-do-projeto">Estrutura do Projeto</h3>
+<p>A estrutura de arquivos proposta demonstra uma organização clara, separando a infraestrutura (CDK) das camadas Lambda:</p>
+<pre><code>projeto_cdk/
+├── bin/             
+│   └── app.ts       
+├── lib/             
+│   ├── productsApp-stack.ts
+│   ├── ecommerceApi-stack.ts
+│   ├── productsAppLayers-stack.ts
+│   ├── eventsDdb-stack.ts
+│   ├── ordersAppLayers-stack.ts
+│   ├── ordersApp-stack.ts
+│   ├── invoiceWSApi-stack.ts
+│   ├── invoicesAppLayers-stack.ts
+│   └── auditEventBus-stack.ts
+├── lambda-layers/
+│   ├── audit/       
+│   ├── auth/       
+│   ├── invoices/     
+│   ├── orders/      
+│   └── products/
+├── cdk.json          
+└── package.json   
+</code></pre>
+<h3 id="configuracao-do-projeto">Configuração do Projeto</h3>
+<ol>
+<li><strong>Crie o projeto:</strong></li>
+<li>Se você ainda não tiver um projeto CDK, crie um novo:
+     <code>bash
+     mkdir projeto_cdk
+     cd projeto_cdk
+     cdk init app --language typescript</code></li>
+<li>
+<p>Caso já tenha um projeto, navegue até o diretório do projeto.</p>
+</li>
+<li>
+<p><strong>Instale as dependências:</strong>
+   <code>bash
+   npm install aws-cdk-lib constructs @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @aws-cdk/aws-dynamodb @aws-cdk/aws-s3 @aws-cdk/aws-sns @aws-cdk/aws-ses @aws-cdk/aws-cognito @aws-cdk/aws-xray @aws-cdk/aws-cloudwatch</code></p>
+</li>
+<li>
+<p><strong>Crie as camadas Lambda:</strong></p>
+</li>
+<li>Dentro de <code>lambda-layers/</code>, crie uma pasta para cada camada (ex: <code>audit/</code>, <code>auth/</code>, <code>invoices/</code>, etc.).</li>
+<li>Em cada pasta, crie os arquivos <code>.ts</code> com o código das suas funções Lambda.</li>
+<li>
+<p>Compile o código TypeScript:
+     <code>bash
+     tsc</code></p>
+</li>
+<li>
+<p><strong>Configure as pilhas (stacks):</strong></p>
+</li>
+<li>
+<p>Em <code>bin/app.ts</code>:</p>
+<ul>
+<li>Importe as pilhas do CDK que você criou.</li>
+<li>Crie instâncias das pilhas, passando as configurações necessárias.</li>
+<li>Exemplo:</li>
+</ul>
+<p>```
+   import * as cdk from 'aws-cdk-lib';
+   import { ProductsAppStack } from '../lib/productsApp-stack';
+   import { ECommerceApiStack } from '../lib/ecommerceApi-stack';
+   // ... (outras importações)</p>
+<p>const app = new cdk.App();
+   new ProductsAppStack(app, 'ProductsAppStack');
+   new ECommerceApiStack(app, 'ECommerceApiStack');
+   // ... (outras instâncias de pilhas)</p>
+<p><code>- Em cada arquivo de pilha (ex: `lib/productsApp-stack.ts`):
+ * Crie construções (constructs) para cada recurso da AWS que você precisa (Lambdas, DynamoDB, API Gateway, etc.).
+ * Use os construtores `@aws-cdk/aws-lambda.LayerVersion` para definir suas camadas Lambda.
+ * Exemplo:</code>typescript
+   import * as lambda from '@aws-cdk/aws-lambda';
+   // ... (outras importações)</p>
+<p>const auditLayer = new lambda.LayerVersion(this, 'AuditLayer', {
+     code: lambda.Code.fromAsset('lambda-layers/audit'),
+     compatibleRuntimes: [lambda.Runtime.NODEJS_14_X] 
+   });</p>
+<p>const myLambdaFunction = new lambda.Function(this, 'MyFunction', {
+     // ... (configuração da função Lambda)
+     layers: [auditLayer]<br />
+   });
+   ```</p>
+</li>
+<li>
+<p><strong>Implante:</strong>
+   <code>bash
+   cdk bootstrap
+   cdk deploy</code></p>
+</li>
+</ol>
+<h3 id="dicas-e-boas-praticas">Dicas e Boas Práticas</h3>
+<ul>
+<li><strong>Mantenha as camadas pequenas:</strong> Camadas muito grandes podem aumentar o tempo de inicialização das funções Lambda.</li>
+<li><strong>Gerencie dependências:</strong> Use um gerenciador de pacotes como npm para gerenciar as dependências das suas camadas.</li>
+<li><strong>Teste localmente:</strong> Teste suas funções Lambda localmente antes de implantá-las na AWS.</li>
+<li><strong>Automatize o deploy:</strong> Utilize ferramentas de CI/CD para automatizar a implantação da sua infraestrutura.</li>
+<li><strong>Monitore:</strong> Utilize o Amazon CloudWatch para monitorar o desempenho e os logs das suas funções Lambda e outros recursos.</li>
+</ul>
+<p>Com este guia completo, você estará apto a configurar seu projeto com o AWS CDK e Lambda Layers em TypeScript, otimizando a estrutura do seu código e facilitando o desenvolvimento e a implantação de aplicações serverless na AWS.</p>
+<p><a href="https://www.udemy.com/course/aws-serverless-nodejs-cdk-pt/?couponCode=LETSLEARNNOWPP">Créditos: Curso Udemy - AWS Serverless com TypeScript e AWS Cloud Development Kit </a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
