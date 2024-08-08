@@ -36,7 +36,7 @@ A arquitetura é projetada para ser escalável, confiável e segura, utilizando 
 
 * **Amazon SES (Simple Email Service):** Serviço de envio de e-mails transacionais, usado para enviar notificações de pedidos, confirmações de cadastro, etc.
 
-![SES](images/ses/e-mails-ses.png)
+![SES](images/ses/emails-ses.png)
 
 * **AWS X-Ray:** Serviço de rastreamento distribuído que ajuda a analisar e depurar solicitações à API Gateway e às funções Lambda.
 
@@ -44,7 +44,7 @@ A arquitetura é projetada para ser escalável, confiável e segura, utilizando 
 
 * **Amazon CloudWatch:** Serviço de monitoramento que coleta logs e métricas dos serviços da AWS, permitindo acompanhar o desempenho da loja virtual e configurar alarmes.
 
-![CloudWatch](images/cloudwatch/cloudwatch-logs-groups.png)
+![CloudWatch](images/cloudwatch/cloudwatch-log-groups.png)
 
 * **AWS CloudFormation:** Serviço de infraestrutura como código (IaC) que permite provisionar e gerenciar os recursos da AWS de forma automatizada e repetível.
 
