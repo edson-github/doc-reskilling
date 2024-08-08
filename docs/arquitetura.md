@@ -26,40 +26,25 @@ A arquitetura é projetada para ser escalável, confiável e segura, utilizando 
 ![API Gateway](images/api-gateway/api-gateway.PNG)
 
 
-![WebSocket API](/images/api-gateway/websocket-api.png)
-
-![WebSocket API](/images/api-gateway/web-socket-2.png)
-
-
 * **Amazon Cognito:** Serviço de gerenciamento de identidade que permite autenticar e autorizar usuários, além de gerenciar o cadastro e login de clientes.
 
-![Amazon Cognito](/images/cognito/aws-cognito-2.png)
+
 
 * **Amazon SNS (Simple Notification Service):** Serviço de mensagens pub/sub que envia notificações por e-mail (SES) ou SMS para clientes e administradores da loja.
 
-![SNS Topics](/images/sns-topics/filtro-de-inscricao.png)
+
 
 * **Amazon SES (Simple Email Service):** Serviço de envio de e-mails transacionais, usado para enviar notificações de pedidos, confirmações de cadastro, etc.
-
-![SNS Topics](/images/ses/emails-ses.png)
 
 
 * **AWS X-Ray:** Serviço de rastreamento distribuído que ajuda a analisar e depurar solicitações à API Gateway e às funções Lambda.
 
-![X-Ray](/images/x-ray/x_ray.png)
-
-
-![X-Ray](/images/x-ray/como-habilitar.png)
 
 * **Amazon CloudWatch:** Serviço de monitoramento que coleta logs e métricas dos serviços da AWS, permitindo acompanhar o desempenho da loja virtual e configurar alarmes.
 
-![X-Ray](/images/cloudwatch/lambda-insights-analise-teste-carga.png)
 
 * **AWS CloudFormation:** Serviço de infraestrutura como código (IaC) que permite provisionar e gerenciar os recursos da AWS de forma automatizada e repetível.
 
-![O que é CloudFormation](/images/cloudformation/o-que-e.png)
-
-![Canvas](/images/cloudformation/api-canvas-cloudformation.png)
 
 ### Fluxo de Trabalho
 
