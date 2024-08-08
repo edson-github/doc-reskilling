@@ -28,7 +28,7 @@ A arquitetura é projetada para ser escalável, confiável e segura, utilizando 
 
 * **Amazon Cognito:** Serviço de gerenciamento de identidade que permite autenticar e autorizar usuários, além de gerenciar o cadastro e login de clientes.
 
-
+![Cognito](images/cognito/aws-cognito-2.png)
 
 * **Amazon SNS (Simple Notification Service):** Serviço de mensagens pub/sub que envia notificações por e-mail (SES) ou SMS para clientes e administradores da loja.
 
