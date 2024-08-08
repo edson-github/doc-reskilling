@@ -32,19 +32,23 @@ A arquitetura é projetada para ser escalável, confiável e segura, utilizando 
 
 * **Amazon SNS (Simple Notification Service):** Serviço de mensagens pub/sub que envia notificações por e-mail (SES) ou SMS para clientes e administradores da loja.
 
-
+![SNS Topics](images/sns-topics/filtro-de-inscricao.png)
 
 * **Amazon SES (Simple Email Service):** Serviço de envio de e-mails transacionais, usado para enviar notificações de pedidos, confirmações de cadastro, etc.
 
+![SES](images/ses/e-mails-ses.png)
 
 * **AWS X-Ray:** Serviço de rastreamento distribuído que ajuda a analisar e depurar solicitações à API Gateway e às funções Lambda.
 
+![AWS X-Ray](images/x-ray/como-habilitar.png)
 
 * **Amazon CloudWatch:** Serviço de monitoramento que coleta logs e métricas dos serviços da AWS, permitindo acompanhar o desempenho da loja virtual e configurar alarmes.
 
+![CloudWatch](images/cloudwatch/cloudwatch-logs-groups.png)
 
 * **AWS CloudFormation:** Serviço de infraestrutura como código (IaC) que permite provisionar e gerenciar os recursos da AWS de forma automatizada e repetível.
 
+![CloudFormation](images/cloudformation/cloudformation-stacks.png)
 
 ### Fluxo de Trabalho
 
