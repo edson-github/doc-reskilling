@@ -10,3 +10,5 @@ Node.js e npm (ou yarn): Para instalar as dependências do projeto e executar os
 AWS CLI: A interface de linha de comando da AWS será utilizada para algumas etapas da instalação. Certifique-se de ter a AWS CLI instalada e configurada em sua máquina local.
 
 Conhecimento básico de AWS, TypeScript e infraestrutura como código: Familiaridade com os serviços da AWS (S3, DynamoDB, Lambda, API Gateway, etc.), a linguagem TypeScript e conceitos de IaC (Infrastructure as Code) serão úteis.
+
+Link documentação: https://edson-github.github.io/doc-reskilling/
